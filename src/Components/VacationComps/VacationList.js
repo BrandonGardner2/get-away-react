@@ -1,25 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import dummyData from "../../Reducers/dummyData";
+import { Col, Row } from "reactstrap";
+
 import VacationListItem from "./VacationListItem";
 
 export const VacationList = props => (
-  <div>
+  <Row>
     {props.length === 0 ? (
       <p>No vacation props!</p>
     ) : (
-      props.vacation.map(item => {
+      props.vacations.map(vacation => {
         return (
-          <VacationListItem key={props.vacation.indexOf(item)} {...item} />
+          <Col sm="4">
+            <VacationListItem
+              key={props.vacations.indexOf(vacation)}
+              {...vacation}
+            />
+          </Col>
         );
       })
     )}
-  </div>
+  </Row>
 );
 
 const mapStateToProps = state => {
   return {
-    vacation: state.vacation
+    vacations: state.vacations
   };
 };
 
