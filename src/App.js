@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./Styles//App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import configureStore from "./Store/store";
@@ -13,11 +13,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div className="App bg-dark">
           <Header />
-          <div className="bg-dark pt-5" style={{ height: "100%" }}>
-            <Dashboard />
-          </div>
+          <Dashboard />>
           <Footer />
         </div>
       </Provider>
